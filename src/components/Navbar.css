@@ -1,0 +1,156 @@
+.header {
+  position: fixed;
+  width: 100%;
+}
+
+nav {
+  background-color: white; /* bg-white */
+  border-color: #e5e7eb; /* border-gray-200 (this is Tailwind's gray-200 color code) */
+  border-width: 1px;
+  padding-top: 0.625rem; /* py-2.5 in Tailwind is 2.5 * 0.25rem = 0.625rem */
+  padding-bottom: 0.625rem;
+}
+
+.container {
+  display: flex; /* flex */
+  flex-wrap: wrap; /* flex-wrap */
+  align-items: center; /* items-center */
+  justify-content: space-between; /* justify-between */
+  max-width: 1280px; /* max-w-screen-xl (1280px is the standard max width for Tailwind's screen-xl) */
+  padding-left: 1rem; /* px-4 (1rem is equal to 16px for padding) */
+  padding-right: 1rem; /* px-4 */
+  margin-left: auto; /* mx-auto (center horizontally) */
+  margin-right: auto; /* mx-auto */
+}
+
+.logo {
+  height: 1.5rem; /* h-6 corresponds to 1.5rem in Tailwind */
+  margin-right: 0.75rem; /* mr-3 corresponds to 0.75rem in Tailwind */
+}
+
+.logo-text {
+  align-self: center; /* self-center aligns the item in the center of the flex container */
+  font-size: 1.25rem; /* text-xl corresponds to 1.25rem (equivalent to 20px) */
+  font-weight: 600; /* font-semibold corresponds to a font weight of 600 */
+  white-space: nowrap; /* whitespace-nowrap prevents text from wrapping */
+}
+
+.contact-button {
+  color: white; /* text-white */
+  background-color: #6b46c1; /* bg-purple-700 */
+  font-weight: 500; /* font-medium */
+  border-radius: 0.5rem; /* rounded-lg */
+  font-size: 0.875rem; /* text-sm = 14px */
+  padding: 0.5rem 1rem; /* py-2, px-4 */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  outline: none; /* focus:outline-none */
+  margin-right: 0.5rem; /* sm:mr-2 for small screens */
+}
+
+.contact-button:hover {
+  background-color: #5a3ea5; /* hover:bg-purple-800 */
+}
+
+.contact-button:focus {
+  ring: 4px solid #d6bcfa; /* focus:ring-4, focus:ring-purple-300 */
+}
+
+.mobile-menu {
+  display: inline-flex; /* inline-flex */
+  align-items: center; /* items-center */
+  padding: 0.5rem; /* p-2 (0.5rem = 8px) */
+  margin-left: 0.25rem; /* ml-1 (0.25rem = 4px) */
+  font-size: 0.775rem; /* text-sm (14px) */
+  color: #6b7280; /* text-gray-500 */
+  outline: none; /* focus:outline-none */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+@media (min-width: 640px) {
+  .contact-button {
+    padding-left: 1.25rem; /* lg:px-5 */
+    padding-right: 1.25rem; /* lg:px-5 */
+    padding-top: 0.625rem; /* lg:py-2.5 */
+    padding-bottom: 0.625rem; /* lg:py-2.5 */
+    margin-right: 0; /* lg:mr-0 */
+    font-size: 0.875rem;
+  }
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  nav {
+    background-color: #111827; /* dark:bg-gray-900 (this is Tailwind's gray-900 color code) */
+  }
+  .span-class {
+    color: white; /* dark:text-white changes the text color to white in dark mode */
+  }
+  .contact-button {
+    background-color: #805ad5; /* dark:bg-purple-600 */
+  }
+
+  .contact-button:hover {
+    background-color: #6b46c1; /* dark:hover:bg-purple-700 */
+  }
+
+  .contact-button:focus {
+    ring: 4px solid #553c9a; /* dark:focus:ring-purple-800 */
+  }
+
+  .mobile-menu {
+    color: #9ca3af; /* dark:text-gray-400 */
+  }
+
+  .mobile-menu:hover {
+    background-color: #374151; /* dark:hover:bg-gray-700 */
+  }
+
+  .mobile-menu:focus {
+    ring: 2px solid #4b5563; /* dark:focus:ring-gray-600 */
+  }
+}
+
+@media (max-width: 1023px) {
+  /* Initial state for hidden menu */
+  .menu-hidden {
+    max-height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    transition:
+      max-height 1.3s ease,
+      opacity 0.5s ease;
+  }
+
+  /* When the menu is visible */
+  .menu-visible {
+    max-height: 500px; /* Adjust this value based on your menu height */
+    opacity: 1;
+    overflow: visible;
+    transition:
+      max-height 0.5s ease,
+      opacity 0.5s ease;
+  }
+
+  .mobile-menu {
+    display: inline-flex; /* inline-flex */
+    align-items: center; /* items-center */
+    padding: 0.5rem; /* p-2 (0.5rem = 8px) */
+    margin-left: 0.25rem; /* ml-1 (0.25rem = 4px) */
+    font-size: 0.875rem; /* text-sm (14px) */
+    color: #6b7280; /* text-gray-500 */
+    border-radius: 0.5rem; /* rounded-lg (8px border radius) */
+    outline: none; /* focus:outline-none */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+
+  .mobile-menu:hover {
+    background-color: #f3f4f6; /* hover:bg-gray-100 */
+  }
+
+  .mobile-menu:focus {
+    ring: 2px solid #e5e7eb; /* focus:ring-2 focus:ring-gray-200 */
+  }
+}
